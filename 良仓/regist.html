@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>用户注册.良仓-生活美学平台</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /><!-- 标题图标 -->
+  <link type="text/css" rel="stylesheet" href="css/regist.css"><!-- 外链样式 -->
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src='js/regist.js'></script><!-- 外链JS -->
+  
+ </head>
+ <body>
+	<div class="regist-body">
+		<a href="index.html"class='logo'><img src="images/reglogo.png" /></a>
+		<div>
+			<p>手机号</p>
+			<input type="text" placeholder='请输入手机号'id='phone'>
+		</div>
+		<div class='inp2'>
+			<p>验证码</p>
+			<input type="text" placeholder='输入验证码' class='yzm'id='yzm'>
+			<div class='yzmimg'id='yzmimg'>
+				<img src="images/authcode.png" />
+			</div>
+			<a href="#"id='change'>看不清，换一张</a>
+			<h1 class='confyzm'id='confyzm'></h1>
+		</div>
+		<div>
+			<p>创建密码</p>
+			<input type="password" placeholder='6-20位字符组成，区分大小写'id='crecode'>
+			<div class="createcode">
+				<div class="level">
+					<p id='p1'><img src="images/level_03.png" /></p>
+					<p id='p2'><img src="images/level_04.png" /></p>
+					<p class='p3' id='p3'><img src="images/level_05.png" /></p>
+				</div>
+				<p>弱</p>
+				<p class='middle'>中</p>
+				<p>强</p>
+			</div>
+		</div>
+		<div>
+			<p>密码确认</p>
+			<input type="password" placeholder='确认密码'id='confpw'>
+		</div>
+		<div class="check">
+			<label><input type="checkbox"checked><span> 同意</span></label>
+			<a href="#">  良仓注册条款</a>
+		</div>
+		<a href="javascript:;" class='rightnow'id='rightnow'>立即注册</a>
+		<div class="link">
+			<a href="javascript:;"><img src="images/qq_03.png" /></a>
+			<a href="javascript:;"><img src="images/qq_05.png" /></a>
+			<a href="javascript:;"><img src="images/qq_07.png" /></a>
+			<a href="javascript:;"><img src="images/qq_09.png" /></a>
+			<span id='login'>登录良仓</span>
+		</div>
+	</div>
+	<!-- 固定广告 -->
+	<a href="#"class='fixad'><img src="images/ad_03.png" /></a>
+	<!-- 错误提示 -->
+	<div class="error"id='error'>
+		<div>
+			<h1><span id='close-error'></span></h1>
+			<p id='errinfo'></p>
+		</div>
+	</div>
+ </body>
+</html>

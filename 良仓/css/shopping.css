@@ -1,0 +1,96 @@
+/* main部分 */
+.main-bg{width:1000px;margin:0 auto 110px;}
+.main-bg:after{content:'';display:block;clear:both;}
+.shoptitle{
+	margin:62px auto 40px;
+	text-align:center;
+	font:14px/14px "微软雅黑";
+	color:#666666;
+	width:1000px;
+	height:14px;
+	float:left;
+}
+.shoptitle>p>span{margin:0 48px;}
+.shoptitle>p>span.active{color:#6393b4;}
+/* 购物车 */
+.gwc{
+	width:1000px;
+	float:left;
+}
+/* 购物车标题 */
+.gt{width:1000px;height:50px;border-bottom:2px solid #cccccc;float:left;}
+.gt>li{
+	float:left;
+	font:15px/50px "微软雅黑";
+	color:#666666;
+}
+.gt>li.qx{margin:0 200px 0 17px;}
+.gt>li.lp{margin-right:190px;}
+.gt>li.sl{margin-right:95px;}
+.gt>li.dj{margin-right:100px;}
+.gt>li.xj{margin-right:85px;}
+/* 购物车内容 */
+.allgoods{width:1000px;float:left;}
+.allgoods>li{
+	width:982px;height:85px;float:left;padding:15px 0 0 18px;
+	border-bottom:1px solid #f0f0f0;display: block;
+}
+/*购物车为空时显示*/
+.allgoods>li.empty{width:640px;height:280px;margin:10px 180px;text-align: center;box-shadow: 2px 2px 2px #B0B0B0;
+	border: 1px solid #B0B0B0;}
+.allgoods>li.empty>img{margin:55px auto 30px;}
+.allgoods>li.empty>h1{font:24px/28px "微软雅黑";color:#999999;}
+.allgoods>li>input{float:left;}
+.allgoods>li>a{float:left;}
+.allgoods>li>a>img{float:left;margin:0 22px 0 2px;width:70px;height:70px;}
+.allgoods>li>div,.allgoods>li>h6{margin-top:20px;}
+.text{float:left;width:300px;margin-right: 45px;overflow: hidden;}
+.text>p{float:left;font:13px/19px "微软雅黑";color:#878787;}
+.text>span{display: none;}
+.numb{width:70px;float:left;margin-right:65px;}
+.numb>h1,.numb>h3{
+	float:left;cursor:pointer;width:12px;height:20px;
+}
+.numb>h1{background:url(../images/decp_03.png)center center no-repeat;}
+.numb>h3{background:url(../images/decp_05.png)center center no-repeat;}
+.numb>h2{float:left;width:28px;text-align:center;;font:16px/20px "微软雅黑";color:#4f4f4f;}
+.price{width:70px;float:left;margin-right:110px;}
+.price>h4{float:left;font:14px/18px "微软雅黑";color:#666666;}
+.allprice{width:70px;float:left;margin-right:85px;}
+.allprice>h5{float:left;font:14px/18px "微软雅黑";color:#666666;}
+.allgoods>li>h6{
+	font:13px/18px "微软雅黑";float:left;
+	color:#6393b4;cursor:pointer;
+}
+/* 价格 */
+.pricebox{
+	width:1000px;float:left;text-align:center;position:relative;
+	padding-top:13px;border-top:2px solid #cccccc;
+}
+.pricebox>p{font:14px/44px "微软雅黑";}
+.pricebox>p>span{font:18px/44px "微软雅黑";color:#197BC9;}
+.pricebox>a.buynow{
+	font:bold 14px/30px "微软雅黑";
+	background:#7fa6c5;
+	color:white;
+	text-align:center;
+	width:168px;
+	margin:0 auto;
+	display: block;
+}
+.pricebox>h2{
+	width:168px;
+	height:24px;
+	margin:0 auto;
+	border-bottom:1px solid #7fa6c5;
+}
+.pricebox>a.goshopping{
+	width:56px;
+	font:14px/14px "微软雅黑";
+	color:#404040;
+	position:absolute;
+	left:50%;
+	margin-left:-28px;
+	bottom:-7px;
+	background:white;
+}

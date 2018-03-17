@@ -1,0 +1,193 @@
+/* 全局样式 */
+*{margin:0;padding:0;}
+a{text-decoration:none;}
+img{border:none;}
+li{list-style:none;}
+/* 注册页面大背景 */
+body{background:#999999;}
+/* 主体 */
+.regist-body{
+	width:533px;
+	height:540px;
+	position:absolute;
+	top:150px;
+	left:50%;
+	margin-left:-266px;
+}
+/* logo */
+.regist-body>a.logo{
+	float:left;
+	margin:0 170px 26px 129px;
+}
+.regist-body>a>img{float:left;}
+/* 手机号 */
+.regist-body>div{
+	width:533px;
+	height:50px;
+	margin-bottom:10px;
+	float:left;
+}
+.regist-body>div>p{
+	font:bold 12px/50px "微软雅黑";
+	color:#f2f2f2;
+	float:left;
+	width:87px;
+	height:50px;
+}
+.regist-body>div>input{
+	width:280px;
+	height:50px;
+	float:left;
+	outline:none;
+	border:none;
+	background:#cccccc;
+	padding-left:20px;
+	font:bold 12px/50px '微软雅黑';
+	color:#fefefe;
+}
+input::-webkit-input-placeholder{color:#fefefe;font-weight:900}
+input::-moz-placeholder{color:#fefefe;}
+input:-moz-placeholder{color:#fefefe;}
+input:-ms-input-placeholder{color:#fefefe;}
+.regist-body>div>input.yzm{width:225px;height:54px;margin-right:23px;}
+/* 验证码 */
+.yzmimg{
+	width:62px;
+	height:26px;
+	border:1px solid black;
+	margin:13px 6px 0 0;
+	float:left;
+}
+.yzmimg>img{float:left;width:62px;height:26px;}
+.regist-body>.inp2{height:54px;}
+.inp2>a{
+	float:left;
+	font:12px/50px "微软雅黑";
+	color:white;
+}
+.regist-body>.inp2>h1{
+	width:106px;
+	height:54px;
+	background:#d4d7d9;
+	font:bold 14px/54px "微软雅黑";
+	text-align:center;
+	color:white;
+	cursor:pointer;
+	display:none;
+	float:left;
+}
+/* 密码 */
+.createcode{
+	width:127px;
+	height:31px;
+	margin:11px 0 0 19px;
+	float:left;
+}
+.level{
+	width:125px;
+	height:9px;
+	border:1px solid #7e7e7e;
+	background:#f5f5f5;
+}
+.level>p{
+	width:42px;
+	height:9px;
+	float:left;
+	display:none;
+}
+.level>p.p3{width:41px;}
+.level>p>img{float:left;}
+.createcode>p{
+	font:12px/20px '微软雅黑';
+	color:#4c4c4c;
+	float:left;
+}
+.middle{margin:0 44px;}
+/* 注册条款 */
+.regist-body>.check{
+	width:300px;
+	height:22px;
+	margin:18px 0 12px 87px;
+}
+.check>label{height:22px;}
+.check>label>input{vertical-align:middle;margin-bottom:2px;}
+.check>label>span{font:bold 12px/22px "微软雅黑";color:white;}
+.check>a{font:12px/22px "微软雅黑";color:#0c79cc;}
+/* 立即注册 */
+.rightnow{
+	width:300px;
+	height:50px;
+	float:left;
+	margin:0 0 30px 87px;
+	font:bold 18px/50px "微软雅黑";
+	color:white;
+	background:#25292e;
+	text-align:center;
+}
+.regist-body>.link{
+	width:300px;
+	height:50px;
+	float:left;
+	margin:0 0 0 87px;
+}
+.link>a>img{float:left;}
+.link>a{float:left;margin:0 10px 0 8px;}
+.link>a:hover{
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
+.link>span{
+	float:right;
+	width:48px;
+	height:19px;
+	border-bottom:1px solid white;
+	font:bold 12px/14px "微软雅黑";
+	cursor:pointer;
+	color:white;
+}
+/* 固定广告 */
+body>.fixad{position:absolute;right:30px;bottom:30px;}
+
+/* 错误提示 */
+.error{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	background:rgba(0,0,0,0.2);
+	display:none;
+	z-index:1;
+}
+.error>div{
+	width:430px;
+	height:120px;
+	border:1px solid #282322;
+	border-radius:5px;
+	position:absolute;
+	top:405px;
+	left:50%;
+	margin-left:-215px;
+	z-index:2;
+	background:#f1f2f7;
+}
+.error>div>h1{
+	width:430px;
+	height:33px;
+	background:url(../images/error_03.png)no-repeat 8px center #282322;
+}
+.error>div>h1>span{
+	float:right;
+	margin:9px 11px 0 0;
+	width:16px;
+	height:15px;
+	background:url(../images/error_06.png);
+	cursor:pointer;
+}
+.error>div>p{
+	width:430px;
+	height:87px;
+	font:12px/87px "微软雅黑";
+	text-align:center;
+	color:#333333;
+}

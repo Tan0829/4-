@@ -1,0 +1,11 @@
+whttp://www.iliangcang.com/
+商品详情页：goodsdetails.html
+注册：regist.html
+购物车：shopping.html
+消息：message.html
+
+商店页：shop.html
+杂志：magazine.html
+分享：share.html
+下载：download.html
+

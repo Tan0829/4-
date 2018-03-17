@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>良仓.生活美学平台</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /><!-- 标题图标 -->
+  <link type="text/css" rel="stylesheet" href="css/goodsinfo.css"><!-- 外链样式 -->
+  <link type="text/css" rel="stylesheet" href="css/base.css"><!-- 外链样式 -->
+  <script src='js/underscore.js'></script><!-- 外链JS -->
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src='js/myajax.js'></script>
+  <script src='js/myjs.js'></script>
+  <script src="js/goodsinfo.js"></script>
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <script src="js/ydxLazyLoad.js"></script>
+  
+ </head>
+ <body>
+	<!-- header样式 -->
+	<div class="head-bg">
+		<div class="head-in">
+			<a href="index.html"><img src="images/logo.png" /></a>
+		<!-- 右边注册信息 -->
+			<ul>
+				<li class='active nopaddingright'><a href="login.html">登录</a></li>
+				<li class='active'><a href="regist.html">注册</a></li>
+				<li class='nopadding'><img src="images/libg.png" /></li>
+				<li class='headlibg shopping'>
+					<span class='goodsnum'id='goodsnum'></span>
+					<a href="javascript:;" id='jumpshop'>购物车</a>
+					<div class="catbox" id="catbox"> <!--购物车下拉菜单，没有商品时显示 -->
+						<div class="catinfo" id="catinfo">你的购物车暂时没有商品...</div>
+						<a href="shop.html" id="disapper">快去抢购良仓商品吧！</a>
+						<a href="shopping.html" class="whilelogin" id="whilelogin">查看我的购物车</a>
+					</div>
+				</li>
+				<li class='nopadding'><img src="images/libg.png" /></li>
+				<li class='headlibg message'><a href="javascript:;" id="message">消息</a>
+					<div class="messagein"><!-- 消息下拉菜单 -->
+						<a href='dt.html'>动态<span>0</span></a>
+						<p></p>
+						<a href='pl.html'>评论<span>0</span></a>
+						<p></p>
+						<a href='sx.html'>私信<span>0</span></a>
+						<p></p>
+						<a href='fs.html'>粉丝<span>0</span></a>
+						<p></p>
+						<a href='xh.html'>喜欢<span>0</span></a>
+						<p></p>
+						<a href='tz.html'>通知<span>0</span></a>
+					</div>
+				</li>
+				<li class='nopadding'><img src="images/libg.png" /></li>
+				<li class='nopaddingright'><a href="javascript:;" id="addinto">添加良品</a></li>
+			</ul>
+			<div class="afterlg" id='afterlg'>
+				<p id="getname"></p>
+				<div class="perinfo">
+					<div><a href='perset.html'>个人设置</a></div>
+					<div><a href='security.html'>账号安全</a></div>
+					<div><a href='goodsinfo.html'>收货信息</a></div>
+					<div><a class='noborder' href='myorder.html'>我的订单</a></div>
+					<p id='quit'>退出</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="loginbg" class="loginbg">
+		<div class="loginbox" id="loginbox">
+			<div class="title"><span>登录良仓</span><p id="closebtn"></p></div>
+			<div class="loginbox-l">
+				<input type="text" placeholder='用户名/邮箱/手机号'id='phone'>
+				<input type="password" placeholder='密码' id='mima'>
+				
+				<div class="check">
+					<label><input type="checkbox"checked><span> 7天内自动登录</span></label>
+					<a href="#">忘记密码？</a>
+				</div>
+				<div class="loginreg">
+					<p class='rightnow' id='rightnow'>登录良仓</p>
+					<a href="regist.html">注册良仓</a>
+				</div>
+			</div>
+			<div class="link">
+				<p>第三方登录：</p>
+				<a href="javascript:;"><img src="images/qq_09.png" /></a>
+				<a href="javascript:;"><img src="images/qq_03.png" /></a>
+				<a href="javascript:;"><img src="images/qq_05.png" /></a>
+				<a href="javascript:;"><img src="images/qq_07.png" /></a>
+			</div>
+		</div>
+		<div class="error"id='error'>
+			<h1><span id='close-error'></span></h1>
+			<p id='errinfo'></p>
+		</div>
+	</div>
+		
+	<!-- 导航部分 -->
+	<div class="nav">
+		<a href="index.html" class="nomargin">首页</a>
+		<a href="shop.html" id="shop">商店</a>
+		<a href="magazine.html"id="magazine">杂志</a>
+		<a href="share.html" id="share">分享</a>
+		<a href="good.html">达人</a>
+		<p id='search'></p>
+		<h1 id='searchbox'>
+			<input type="text" placeholder='search...' id="searchinfo">
+		</h1>
+		<h2></h2>
+	</div>
+	<!-- 返回顶部和联系客服 -->
+	<div class="backtop">
+		<a href="javascript:scrollTo(0,0)"></a>
+		<p>联系客服</p>
+	</div>
+	<!-- 导航子菜单 -->
+	<!-- 商店 -->
+	<div class="shopbox" id="shopbox">
+		<div class="shop">
+			<ul class='ul1'id='ul1'></ul>
+			<div class="newsight">
+				<img src="images/newsi.png" />
+				<p>新视线：2015年7月刊</p>
+			</div>
+			<p><span>查看所有品牌&nbsp;&gt;</span><span>最新到货&nbsp;&gt;</span></p>
+		</div>
+	</div>
+	<!-- 杂志 -->
+	<div class="shopbox mg" id="magazinebox">
+		<div class="magazinein">
+			<ul>
+				<li>趣物</li>
+				<li>数码</li>
+				<li>汽车</li>
+				<li>文化</li>
+				<li>时尚</li>
+				<li>美食</li>
+				<li>建筑</li>
+				<li>空间</li>
+				<li>圈子</li>
+				<li>清单</li>
+				<li>活动</li>
+				<li>视频</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 分享 -->
+	<div class="shopbox mg" id="sharebox">
+		<div class="sharein">
+			<ul>
+				<li>男士</li>
+				<li>家居</li>
+				<li>数码</li>
+				<li>工具</li>
+				<li>玩具</li>
+				<li>美容</li>
+				<li>孩子</li>
+				<li>宠物</li>
+				<li>饮食</li>
+				<li>运动</li>
+				<li>文化</li>
+				<li>女士</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 通用基本设置 -->	
+	<div class="base">
+		<a href="perset.html">基本设置</a>
+	</div>
+	<!-- part1 -->
+	<div class='part1'>
+		<ul>
+			<li><a href="perset.html">个人设置</a></li>
+			<li>|</li>
+			<li><a href="security.html">账号安全</a></li>
+			<li>|</li>
+			<li class='active'><a href="goodsinfo.html">收货信息</a></li>
+			<li>|</li>
+			<li><a href="myorder.html">我的订单</a></li>
+			<li>|</li>
+			<li><a href="invite.html">邀请好友</a></li>
+		</ul>
+		<h1>收货地址管理</h1>
+		<h2>新增常用收货地址</h2>
+		<h3>电话号码或手机，必须填写一项</h3>
+		<div>
+			<h1>真实姓名：</h1>
+			<input type="text">
+			<span>*</span>
+		</div>
+		<div class='posi'>
+			<h1>所在地：</h1>
+			<select class='guojia'>
+				<option value="" selected>中国</option>
+			</select>
+			<select>
+				<option value="" selected>所在省份</option>
+			</select>
+			<select>
+				<option value="" selected>所在城市</option>
+			</select>
+			<span>*</span>
+		</div>
+		<div class='str'>
+			<h1>街道地址：</h1>
+			<input type="text">
+			<span>*&nbsp;不需要重复填写省、市、区</span>
+		</div>
+		<div>
+			<h1>邮政编码：</h1>
+			<input type="text">
+		</div>
+		<div>
+			<h1>手机号码：</h1>
+			<input type="text">
+			<span>*</span>
+		</div>
+		<div class='tele '>
+			<h1>电话号码：</h1>
+			<input type="text"class='te1'><p>-</p>
+			<input type="text"class='te2'><p>-</p>
+			<input type="text"class='te3'>
+			<span>区号-电话号码-分机号(如：010-88888888/123)</span>
+		</div>
+		<div class='moren'>
+			<h1>设为默认：</h1>
+			<input type="checkbox">
+		</div>
+		<div class='save'>
+			<h1></h1>
+			<a href="javascript:;">保存</a>
+		</div>
+	</div>	
+	<div class="part2">
+		<h1>已保存的常用地址</h1>
+		<ul>
+			<li class='td1'>收货人</li>
+			<li class='td2'>所在地区</li>
+			<li class='td3'>街道地址</li>
+			<li class='td4'>电话/手机</li>
+			<li class='td5'>状态</li>
+			<li class='td6'>操作</li>
+		</ul>
+		<p>备注：最多保留20个常用有效地址</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<!-- 良仓商品 --> 
+	<div class="goodsbg">
+		<div class="lcgoods">
+			<p><img src="images/pointer.png" />良仓商店 / <span>OUR SHOP</span></p>
+			<ul>
+				<li><img src="images/lc_03.png" /><h1>全球精品</h1>
+					<h2>Global Selections</h2>
+				</li>
+				<li><img src="images/lc_05.png" /><h1>正品保证</h1>
+					<h2>Authenticity Guaranteed</h2>
+				</li>
+				<li><img src="images/lc_07.png" /><h1>全场包邮</h1>
+				<h2>Free Delivery</h2>
+				</li>
+				<li><img src="images/lc_09.png" /><h1>400-897-6336</h1>
+				<h2>工作日 09:00-18:00</h2>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="footerbg">
+		<div class="footer">
+			<div class="top">
+				<div id='downld'><h1>iPhone Android<br><span>客户端下载</span></h1>
+					<div class="downl">
+						<p class='lp'><img src="images/downl_03.png" />下载iPhone版</p>
+						<p class='rp'><img src="images/downl_05.png" />下载Android版</p>
+					</div>
+				</div>
+				<a href="http://www.douban.com"><img src="images/f_10.png" /></a>
+				<a href="http://weibo.com"><img src="images/f_08.png" /></a>
+				<p><img src="images/f_06.png" /><a href="javascript:;"><img src="images/weixin.png" /></a></p>
+			</div>
+			<div class="middle">
+				<ul>
+					<li>关于良仓</li>
+					<li>|</li>
+					<li>服务协议</li>
+					<li>|</li>
+					<li>隐私保护政策</li>
+					<li>|</li>
+					<li>使用指南</li>
+					<li>|</li>
+					<li>联系我们</li>
+					<li>|</li>
+					<li>加入我们</li>
+					<li>|</li>
+					<li>友情链接</li>
+					<li>|</li>
+					<li>私信良仓</li>
+				</ul>
+			</div>
+			<p class='footer-p1'>&copy; 2013-2015 北京良仓文化传播有限公司版权所有&nbsp;京ICP备13010677号-1&nbsp;京公网安备11010502025627</p>
+			<p>公司名称：北京良仓文化传播有限公司&nbsp;电话：010-58263516</p>
+			<p>公司地址：北京朝阳区百子湾路32号6楼1层60号，</p>
+			<p>社会信用统一代码：91110105059231575L&nbsp;食品许可证：JY11105160159557</p>
+			<p>图书证名称：中华人民共和国出版物经营许可证&nbsp;图书证编号：新出发京零 字第 朝 150051 号</p>
+		</div>
+	</div>
+ </body>
+</html>
+<script src="js/base.js"></script>

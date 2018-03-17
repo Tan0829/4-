@@ -1,0 +1,200 @@
+/*网址导航*/
+.webnav{width:1000px;height:50px;margin:0 auto;font:12px/50px "微软雅黑";}
+.webnav>a{color:#333333;}
+.webnav>span{color:#999999;margin:0 2px;}
+/*商品导航*/
+.shopnav{
+	width:1000px;
+	height:47px;
+	margin:6px auto 0;
+	position:relative;
+	z-index:2;
+}
+.shopnav>ul{
+	width:840px;
+	height:45px;
+	float:left;
+	background:white;
+	border-bottom:1px solid #ededed;
+}
+.shopnav>ul>li{
+	width:54px;
+	height:45px;
+	float:left;
+	font:13px/45px "微软雅黑";
+	text-align:center;
+	margin-right:20px;
+}
+.shopnav>ul>li.first{width:70px;}
+.shopnav>ul>li>a{color:#333333;}
+.shopnav>ul>li>a>img{float:left;margin:12px 10px 0 0;}
+.shopnav>.price{
+	width:70px;
+	height:45px;
+	float:right;
+	padding-left:90px;
+	border-bottom:1px solid #ededed;
+	position:absolute;
+	right:0;
+	top:0;
+	font:13px/45px "微软雅黑";
+	cursor:pointer;
+}
+.price:hover>ul{display:block;}
+.price:hover>img{transform:rotate(0deg);}
+.price>img{
+	float:right;
+	margin-top:18px;
+	transform:rotate(-180deg);
+	transition:0.5s;
+}
+.price>ul{
+	width:97px;
+	height:240px;
+	position:absolute;
+	right:0;
+	top:46px;
+	display:none;
+	background:white;
+}
+.price>ul>li{
+	width:85px;
+	height:39px;
+	border:1px solid #ededed;
+	border-top:none;
+	font:12px/39px "微软雅黑";
+	color:#666666;
+	padding-left:10px;
+	float:left;
+}
+.price>ul>li.active{background:#333333;color:white;}
+.price>ul>li:hover{background:#333333;color:white;}
+.shopnav>p.nline{
+	width:54px;
+	height:1px;
+	background:#333333;
+	position:absolute;
+	transition:0.4s ease;
+	/*left:0;*/
+	top:45px;
+	/*opacity:0;*/
+}
+/* part2部分 */
+.part2{width:1000px;height:2416px;margin:20px auto 0;}
+.part2>ul{
+	width:1000px;
+	float:left;
+}
+.part2>ul>li{
+	width:316px;
+	height:364px;
+	margin:32px 26px 0 0;
+	float:left;
+	position:relative;
+	cursor:pointer;
+}
+.part2>ul>li>.img{width:316px;height:316px;margin-bottom:11px;float:left;}
+.part2>ul>li>.img>img{width:316px;height:316px;float:left;}
+.part2>ul>li>.details{
+	width:316px;
+	height:37px;
+	float:left;
+	background:url(../images/xihuan.png)no-repeat 295px center;
+}
+.details>img{float:left;margin-right:12px;width:38px;height:38px;}
+.details>p{float:left;font:12px/37px "微软雅黑";color:#878787;}
+.details>span{float:right;margin-right:32px;font:12px/37px "微软雅黑";color:#878787;}
+.part2>ul>li>.img>.hoverimg{
+	width:316px;
+	height:316px;
+	position:absolute;
+	left:0;
+	top:0;
+	background:rgba(0,0,0,0.7);
+	display:none;
+}
+.part2>ul>li>.img:hover>.hoverimg{display:block;}
+.hoverimg>a{width:316px;height:316px;float:left;}
+.hoverimg>a>h1{
+	
+	font:bold 16px/18px "微软雅黑";
+	color:#0c6eba;
+	
+	margin:22px 0 80px 20px;
+}
+.hoverimg>a>h2{
+	width:276px;
+	height:36px;
+	font:bold 14px/36px "微软雅黑";
+	color:white;
+	float:left;
+	text-align:center;
+	margin:0 20px;
+	overflow:hidden;
+}
+.hoverimg>a>h3{
+	width:270px;
+	font:12px/20px "微软雅黑";
+	color:#e2dfe2;
+	float:left;
+	text-align:center;
+	margin:0 23px;
+}
+/* 分页 */
+.page{
+	height:110px;
+	padding-top:45px;
+	float:right;
+}
+.page>.prev,.page>.next{
+	width:58px;
+	height:18px;
+	border:1px solid #d4d4d4;
+	float:left;
+	margin-left:4px;
+	background:#efefef;
+	font:12px/18px "微软雅黑";
+	color:#4f4f4f;
+	text-align:center;
+	border-radius:4px;
+	padding:0;
+}
+.page>a,.page>span{
+	float:left;
+	padding:0 4px;
+	height:18px;
+	margin-right:4px;
+	font:12px/18px "微软雅黑";
+	color:#878787;
+	text-align:center;
+	cursor:pointer;
+}
+.page>a.prev:hover,.page>a.next:hover{background:#efefef;color:#4f4f4f;}
+.page>a:hover{background:#cccccc;color:#fffaf4;}
+.page>span{background:#98B5D5;color:white;}
+.page>input{
+	width:24px;
+	height:18px;
+	border:1px solid #98b5d5;
+	outline:none;
+	float:left;
+}
+.page>p{
+	font:14px/20px "微软雅黑";
+	color:#8c8c8d;
+	margin:0 8px;
+	float:left;
+}
+.page>a.jump-btn{
+	float:right;
+	margin-left:4px;
+	width:40px;
+	height:20px;
+	font:12px/20px "微软雅黑";
+	color:#e9e9ea;
+	background:#8c8c8d;
+	text-align:center;
+	border-radius:4px;
+	padding:0;
+	cursor:pointer;
+}
