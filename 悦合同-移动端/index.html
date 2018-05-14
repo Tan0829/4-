@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+		<title></title>
+		<style type="text/css">
+			*{margin:0;padding: 0;}
+			li{list-style: none;}
+			a{text-decoration: none;}
+			/*logo*/
+			html,body{font-size:14px;min-width: 320px;}
+			.navbar{width:100%;padding:0px 1% 0px 5%;margin-bottom:0;}
+			.navbar-brand>a{float:left;}
+			@media screen and (min-width:1200px) {
+				.navbar-brand>a{width:195px;height:73px;background: url(img/logo.png)no-repeat;}
+				.logotext{font:26px/72px "微软雅黑";}
+				.navbar-brand{height:115px;}
+				.navbartoggle{display: none;}
+				.inputbox{padding:0 250px;}
+				.lb{padding:40px 175px 30px;}
+			}
+			@media screen and (min-width:770px) and (max-width:1200px){
+				.navbar-brand>a{width:162px;height:56px;background: url(img/logo.png)no-repeat -203px 0px;}
+				.logotext{font:22px/56px "微软雅黑";}
+				.navbar-brand{height:80px;}
+				.navbartoggle{display: none;}
+				.inputbox{padding:0 150px;}
+				.lb{padding:40px 50px 30px;}
+			}
+			@media screen and (min-width:550px) and (max-width:770px){
+				.navbar-brand>a{width:120px;height:45px;background: url(img/logo.png)no-repeat 0px -82px;}
+				.logotext{font:18px/45px "微软雅黑";}
+				.navbar-brand{height:80px;}
+				.jumbotron{height:135px !important;}
+				.inputbox{padding:0 50px;}
+				.container{padding-top:35px;}
+				.lb{padding:40px 20px 30px;}
+				.yhd>p>span{line-height: 50px;}
+			}
+			@media screen and (max-width:550px){
+				.navbar-brand>a{width:100px;height:37px;background: url(img/logo.png)no-repeat -127px -85px;}
+				.logotext{font:14px/37px "微软雅黑";}
+				.navbar-brand{height:60px;width:100%;}
+				.jumbotron{height:135px !important;}
+				.inputbox{padding:0 10px;}
+				.container{padding-top:35px;}
+				.smnav{top:61px !important;}
+				.lb{padding:40px 10px 30px;}
+				.yhd>p>span{line-height: 50px;}
+			}
+			@media screen and (min-width:100px) and (max-width:990px){.navbartoggle{display: block;}}
+			@media screen and (min-width:1410px) {.yhd>p{line-height:50px;}}
+			.navbar-brand{width:auto;}
+			.navbar{background:white;border:none;border-bottom:1px solid #F5F5F5;}
+			.logotext{margin-left:20px;color:#35C1EC;}
+			.nav>li>a{color:#555555 !important;font-size:1.2rem;margin-top:10px;padding:5px 10px;}
+			.nav>li{margin:auto 5px;}
+			.nav>li>a:hover{color:white !important;background:#2FB4E9 !important;border-radius: 4px;}
+			.inline{float:left;color:#2FB4E9;margin-top:10px;font-size:20px;}
+			.navbartoggle{width:32px;height:37px;background:url(img/btn1.png)no-repeat center center white;border: none;position: absolute;top:20px;right:20px;}
+			.navbartoggle:hover{background:url(img/btn.png);}
+			.navbar-nav{margin-top:2%;}
+			.smnav{position: absolute;top:81px;background: white;width:100%;height:105px;z-index: 5;display: none;}
+			.smnav>ul{float:right;width:100%;min-width: 320px;}
+			.smnav>ul>li{float:right;}
+			.smnav>ul>li>a{font:14px/50px "微软雅黑";color:#555555;padding:5px 10px;}
+			.smnav>ul>li>a:hover{color:white;background:#2FB4E9;border-radius: 4px;text-decoration: none;}
+			.smnav>ul>li.line{width:100%;border-bottom:1px solid #F5F5F5;}
+			/*巨幕*/
+			.jumbotron{width:100%;height:150px;background: url(img/sbg.jpg);margin-bottom: 0;vertical-align: middle;}
+			.search{width:112px;background:#FDD26D;border:none;outline: none;height:55px !important;box-shadow: none;}
+			.form-control{height:55px !important;border:none;outline: none;}
+			.search:after{display:inline-block;content:"";width:32px;height:42px;background: url(img/logo.png) -167px -128px no-repeat;vertical-align: middle;}
+			/*智能合同*/
+			.title1{width:100%;font:24px/120px "微软雅黑";text-align: center;}
+			.title1>span{color:#39A1FF;}
+			.znht{background: #F5F5F5;width:100%;padding:0 10% 20px;}
+			.znht>ul{margin-bottom: 20px;}
+			.znht>ul>li{height:38px;font:16px/38px "微软雅黑";padding-left:10px;border-top:1px dashed #EAEAEA;background:white;}
+			.znht>ul>li:nth-child(2){border: none;padding-top: 10px;height:48px;}
+			.znht>ul>li.tit{height:42px;text-align: center;background: #E8B875;padding-left:0px;border:none;}
+			.znht>ul>li.tit>a{color:white;font:18px/42px "微软雅黑";}
+			.znht>ul>li>a{text-decoration: none;color:#555555;}
+			/*个性化*/
+			.gxh{margin-bottom: 40px;}
+			.gxh>div{height:280px;cursor: pointer;}
+			.head{width:auto;height:170px;border:1px solid #DDDDDD;background: #F97B39;padding:1px;background-clip: content-box;border-bottom:none;}
+			.head>p{width:80px;height:80px;border: 1px solid white;border-radius: 50%;margin:20px auto 0;}
+			.head>p>span{display: block;width:35px;height:35px;color:white;margin:22px auto;font-size:32px;}
+			.head>a{display: block;color:white;text-align: center;text-decoration: none;margin-top:10px;}
+			.text{width:auto;height:110px;border:1px solid #DDDDDD;padding:1px;background-clip: content-box;border-top:none;text-align: center;}
+			.text>h4,.text>p{color:#666666;font-size:16px;}
+			.text>p>span{text-decoration: line-through;color:#777777;}
+			.text>p>a{text-decoration: none;color:#F0711F;}
+			/*banner*/
+			.banner{width:100%;background: #EDEDED;}
+			.banner>img{width:100%;height:auto;}
+			/*轮播图部分*/
+			.lb{background: #F5F5F5;width:100%;height:270px;}
+			.lbt{height:200px;}
+			.lbt>div{width:100%;height:200px;}
+			.swipe{
+				overflow: hidden; visibility: hidden;position: relative;
+			}
+			.swipe .swipe-wrap{
+				overflow: hidden; position: relative;height:100%;
+			}
+			.swipe .swipe-wrap>div{
+				float: left; position: relative;height:100%;background: white;
+			}
+			.swipe .swipe-wrap>div>img{height:100%;margin:0 auto;}
+			.lbt>.number{margin:0 auto;height:6px;width:140px;position: relative;top:-15px;}
+			.number span{
+				width:20px; height: 6px; float: left; background: #F1A179; 
+				margin: 0 4px;
+			}
+			.number span.cur{background: white;}
+			.yhd{background: white;border-right:1px solid #cccccc;height:200px;padding-right:0;}
+			.yhd>h3{color:#225599;text-align: center;}
+			.yhd>p{color:333333;width:100%;border-bottom:1px solid #cccccc;padding-left:10px;height:50px;margin-bottom: 0;vertical-align: middle;}
+			.yhd>p:hover{background: #EEEEEE;border-right:4px solid #65FF00;}
+			/*商家选择*/
+			.hz{width:100%;background: url(img/bigbg.jpg);padding-bottom: 50px;}
+			.hz>ul{margin-bottom: 0;}
+			.hz>ul>li{border:1px solid #BABABA;padding:0;height:100%;perspective: 800px;background: white;}
+			.hz>ul>li>img{width:100%;transition:0.3s;transform: translateZ(-100px);}
+			.hz>ul>li:hover>img{transform:translateZ(0px);}
+			/*合作方*/
+			.hzf{width:100%;padding-bottom: 50px;}
+			/*.hzf>ul{margin-bottom: 0;}*/
+			.hzf>ul>li{padding:0;height:100%;perspective: 800px;background: white;}
+			.hzf>ul>li>img{width:100%;transition:0.3s;transform: translateZ(-100px);}
+			.hzf>ul>li:hover>img{transform:translateZ(0px);}
+			/*foot*/
+			.foot{width:100%;background: #EFEFEF;padding:20px 0 40px 0;}
+			.foot>div{height:215px;}
+			.foot>div>h3{color: #333333;}
+			.foot>div>p{color:#7A7A7A;cursor: pointer;}
+			.foot>div.bq{width:290px;text-align: right;}
+			.foot>div>p:hover{color: #4285F4;}
+			/*返回顶部*/
+			.top{width:60px;height:120px;position: fixed;right:10px;bottom:100px;}
+			.top>a{float: left;width:60px;height:60px;}
+			.backtop{background: url(img/top.png);transition: 0.3s;opacity: 0;}
+			.backtop:hover{background: url(img/toph.png);}
+			.weixin{background: url(img/wx.png);position: relative;}
+			.weixin:hover{background: url(img/wxh.png);}
+			.weixin:hover>p{display: block;}
+			.weixin>p{width:220px;height:260px;position: absolute;left:-220px;top:-100px;
+			background: white;padding:20px;border: 1px solid blue;display: none;transition: 0.3s;text-align: center;color:#333333;}
+			.weixin>p>img{width:180px;height:180px;float: left;}
+		</style>
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-static-top"><!--导航-->
+			<div class="navbar-brand">
+				<a href="#"></a>
+				<span class="logotext">专业合同服务商</span>
+			</div>
+			<a class="navbartoggle"></a>
+			<ul class="nav navbar-nav navbar-right visible-lg visible-md">
+				<li class="tit"><a href="#">悦读</a></li>
+				<li><a href="#">悦活动</a></li>
+				<li><a href="#">智能合同</a></li>
+				<li><a href="#">写合同</a></li>
+				<li><a href="#">审合同</a></li>
+				<li><span class="inline">|</span></li>
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span>　登陆</a></li>
+			</ul>
+		</div>
+		<!--小屏导航-->
+		<div class="smnav">
+			<ul>
+				<li><a href="#">审合同</a></li>
+				<li><a href="#">写合同</a></li>
+				<li><a href="#">智能合同</a></li>
+				<li><a href="#">悦活动</a></li>
+				<li><a href="#">悦读</a></li>
+				<li class="line"></li>
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span>　登陆</a></li>
+			</ul>
+		</div>
+			
+		<div class="jumbotron container"><!--巨幕-->
+			<form>
+				<div class="input-group input-group-md inputbox">
+					<input type="text" class="form-control" placeholder="请输入您要搜索的关键字,如股权转让合同、版权授权、劳动"/>
+					<span class="input-group-btn"><a href="#" class="btn search"></a></span>
+				</div>
+			</form>
+		</div>
+		<div class="container znht">
+			<h3 class="title1">智能合同</h3>
+			<ul class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<li class="tit"><a href="#">股权</a></li>
+				<li><a href="#">出资协议</a></li>
+				<li><a href="#">股权转让协议</a></li>
+				<li><a href="#">股权代持协议</a></li>
+				<li><a href="#">增资协议</a></li>
+				<li><a href="#">资产收购协议</a></li>
+				<li><a href="#">...</a></li>
+			</ul>
+			<ul class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<li class="tit"><a href="#">股权</a></li>
+				<li><a href="#">出资协议</a></li>
+				<li><a href="#">股权转让协议</a></li>
+				<li><a href="#">股权代持协议</a></li>
+				<li><a href="#">增资协议</a></li>
+				<li><a href="#">资产收购协议</a></li>
+				<li><a href="#">...</a></li>
+			</ul>
+			<ul class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<li class="tit"><a href="#">股权</a></li>
+				<li><a href="#">出资协议</a></li>
+				<li><a href="#">股权转让协议</a></li>
+				<li><a href="#">股权代持协议</a></li>
+				<li><a href="#">增资协议</a></li>
+				<li><a href="#">资产收购协议</a></li>
+				<li><a href="#">...</a></li>
+			</ul>
+			<ul class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<li class="tit"><a href="#">股权</a></li>
+				<li><a href="#">出资协议</a></li>
+				<li><a href="#">股权转让协议</a></li>
+				<li><a href="#">股权代持协议</a></li>
+				<li><a href="#">增资协议</a></li>
+				<li><a href="#">资产收购协议</a></li>
+				<li><a href="#">...</a></li>
+			</ul>
+			<ul class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<li class="tit"><a href="#">股权</a></li>
+				<li><a href="#">出资协议</a></li>
+				<li><a href="#">股权转让协议</a></li>
+				<li><a href="#">股权代持协议</a></li>
+				<li><a href="#">增资协议</a></li>
+				<li><a href="#">资产收购协议</a></li>
+				<li><a href="#">...</a></li>
+			</ul>
+			<ul class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<li class="tit"><a href="#">股权</a></li>
+				<li><a href="#">出资协议</a></li>
+				<li><a href="#">股权转让协议</a></li>
+				<li><a href="#">股权代持协议</a></li>
+				<li><a href="#">增资协议</a></li>
+				<li><a href="#">资产收购协议</a></li>
+				<li><a href="#">...</a></li>
+			</ul>
+			<ul class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<li class="tit"><a href="#">股权</a></li>
+				<li><a href="#">出资协议</a></li>
+				<li><a href="#">股权转让协议</a></li>
+				<li><a href="#">股权代持协议</a></li>
+				<li><a href="#">增资协议</a></li>
+				<li><a href="#">资产收购协议</a></li>
+				<li><a href="#">...</a></li>
+			</ul>
+			<ul class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<li class="tit"><a href="#">股权</a></li>
+				<li><a href="#">出资协议</a></li>
+				<li><a href="#">股权转让协议</a></li>
+				<li><a href="#">股权代持协议</a></li>
+				<li><a href="#">增资协议</a></li>
+				<li><a href="#">资产收购协议</a></li>
+				<li><a href="#">...</a></li>
+			</ul>
+		</div>
+		<div class="container gxh">
+			<h3 class="title1">个性化服务</h3>
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<div class="head">
+					<p><span href="#" class="glyphicon glyphicon-font"></span></p>
+					<a href="#">你提需求<br />我出合同</a>
+				</div>
+				<div class="text">
+					<h4>写合同</h4>
+					<p>原价：<span>3000</span>元/次</p>
+					<p>限时价：<a href="#">1000</a>元/次</p>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<div class="head">
+					<p><span href="#" class="glyphicon glyphicon-font"></span></p>
+					<a href="#">你提需求<br />我出合同</a>
+				</div>
+				<div class="text">
+					<h4>写合同</h4>
+					<p>原价：<span>3000</span>元/次</p>
+					<p>限时价：<a href="#">1000</a>元/次</p>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<div class="head">
+					<p><span href="#" class="glyphicon glyphicon-font"></span></p>
+					<a href="#">你提需求<br />我出合同</a>
+				</div>
+				<div class="text">
+					<h4>写合同</h4>
+					<p>原价：<span>3000</span>元/次</p>
+					<p>限时价：<a href="#">1000</a>元/次</p>
+				</div>
+			</div>
+		</div>
+		<div class="container banner"><img src="img/banner.png"  col-xs-12/></div>
+		<div class="container lb">
+			<div class="lbt col-md-3 col-lg-3 col-sm-3 col-xs-12">
+				<div class="swipe" id="mySwipe">
+					<div class="swipe-wrap">
+						<div><img src="img/b1.jpg"class="img-responsive"></div>
+						<div><img src="img/b2.png"class="img-responsive"></div>
+						<div><img src="img/b3.jpg"class="img-responsive"></div>
+						<div><img src="img/b4.png"class="img-responsive"></div>
+						<div><img src="img/b5.jpg"class="img-responsive"></div>
+					</div>
+				</div>
+				<div class="number">
+					<span class="cur"></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<div class="col-md-3 col-lg-3 col-sm-3 col-xs-12 yhd">
+				<h3>悦活动</h3>
+				<p><span>恭喜悦合同入围"越青杯"成长组32强</span></p>
+				<p><span>恭喜悦合同入围"越青杯"成长组32强</span></p>
+				<p><span>恭喜悦合同入围"越青杯"成长组32强</span></p>
+			</div>
+			<div class="col-md-3 col-lg-3 col-sm-3 col-xs-12 yhd">
+				<h3>悦活动</h3>
+				<p><span>恭喜悦合同入围"越青杯"成长组32强</span></p>
+				<p><span>恭喜悦合同入围"越青杯"成长组32强</span></p>
+				<p><span>恭喜悦合同入围"越青杯"成长组32强</span></p>
+			</div>
+			<div class="col-md-3 col-lg-3 col-sm-3 col-xs-12 yhd">
+				<h3>悦活动</h3>
+				<p><span>恭喜悦合同入围"越青杯"成长组32强</span></p>
+				<p><span>恭喜悦合同入围"越青杯"成长组32强</span></p>
+				<p><span>恭喜悦合同入围"越青杯"成长组32强</span></p>
+			</div>
+		</div>
+		<div class="container hz">
+			<h3 class="title1"><span>100+</span>家企业明智的选择</h3>
+			<ul class="col-xs-10 col-xs-push-1">
+				<li class="col-xs-2"><img src="img/1.jpg"/></li>
+				<li class="col-xs-2"><img src="img/2.png"/></li>
+				<li class="col-xs-2"><img src="img/3.png"/></li>
+				<li class="col-xs-2"><img src="img/4.png"/></li>
+				<li class="col-xs-2"><img src="img/5.jpg"/></li>
+				<li class="col-xs-2"><img src="img/6.jpg"/></li>
+			</ul>
+			<ul class="col-xs-10 col-xs-push-1">
+				<li class="col-xs-2"><img src="img/7.jpg"/></li>
+				<li class="col-xs-2"><img src="img/8.png"/></li>
+				<li class="col-xs-2"><img src="img/9.jpg"/></li>
+				<li class="col-xs-2"><img src="img/10.png"/></li>
+				<li class="col-xs-2"><img src="img/11.png"/></li>
+				<li class="col-xs-2"><img src="img/12.png"/></li>
+			</ul>
+			<ul  class="col-xs-10 col-xs-push-1">
+				<li class="col-xs-2"><img src="img/13.png"/></li>
+				<li class="col-xs-2"><img src="img/14.png"/></li>
+				<li class="col-xs-2"><img src="img/15.png"/></li>
+				<li class="col-xs-2"><img src="img/16.png"/></li>
+				<li class="col-xs-2"><img src="img/17.png"/></li>
+				<li class="col-xs-2"><img src="img/18.jpg"/></li>
+			</ul>
+		</div>
+		<div class="container hzf">
+			<h3 class="title1">悦合同合作方</h3>
+			<ul  class="col-xs-10 col-xs-push-1">
+				<li class="col-xs-2"><img src="img/h1.jpg"/></li>
+				<li class="col-xs-2"><img src="img/h2.jpg"/></li>
+				<li class="col-xs-2"><img src="img/h3.png"/></li>
+				<li class="col-xs-2"><img src="img/h4.jpg"/></li>
+				<li class="col-xs-2"><img src="img/h5.png"/></li>
+				<li class="col-xs-2"><img src="img/h6.png"/></li>
+				<li class="col-xs-2"><img src="img/h7.jpg"/></li>
+				<li class="col-xs-2"><img src="img/h8.jpg"/></li>
+				<li class="col-xs-2"><img src="img/h9.jpg"/></li>
+				<li class="col-xs-2"><img src="img/h10.png"/></li>
+			</ul>
+		</div>
+		<div class="container foot">
+			<div class="col-xs-5 col-sm-2 col-xs-push-1">
+				<h4>产品</h4>
+				<p>写合同</p>
+				<p>审合同</p>
+				<p>合同顾问</p>
+			</div>
+			<div class="col-xs-5 col-sm-2 col-xs-push-1">
+				<h4>政策</h4>
+				<p>服务协议</p>
+				<p>常见问题</p>
+				<p>会员政策</p>
+				<p>会员权益</p>
+				<p>定价标准</p>
+			</div>
+			<div class="col-xs-5 col-sm-2 col-xs-push-1">
+				<h4>公司</h4>
+				<p>品牌故事</p>
+				<p>关于我们</p>
+				<p>联系我们</p>
+			</div>
+			<div class="col-xs-5 col-sm-2 col-xs-push-1">
+				<h4>资源</h4>
+				<p>网站地图</p>
+				<p>意见反馈</p>
+			</div>
+			<div class="col-xs-5 col-sm-2 bq">
+				<p> </p>
+				<p> </p>
+				<p>&copy;悦合同</p>
+				<p>yuehetong.com</p>
+				<p>粤ICP备16004471号</p>
+				<p>版权所有 &copy; 广州诚心网络科技有限公司</p>
+			</div>
+		</div>
+		<div class="top">
+			<a href="javascript:;" class="backtop"></a>
+			<a href="javascript:;" class="weixin">
+				<p><img src="img/wx.jpg" alt="" />微信扫码资讯<br />请备注"<b>合同服务</b>"</p>
+			</a>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/swipe.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(".navbartoggle").click(function(){
+		$(".smnav").slideToggle();
+	});
+	//轮播
+	var oSwipe = document.querySelector('#mySwipe');
+	var aSpan = document.querySelectorAll('.number span');
+	var mySwipe = new Swipe(oSwipe,{
+		auto:2000,
+		startSlide:0,
+		speed:500,
+		continuous:true,
+		disableScroll:true,
+		callback: function(){
+			var n = mySwipe.getPos();
+			for(var i=0; i<aSpan.length; i++){
+				aSpan[i].className = '';
+			}
+			aSpan[n].className = 'cur';
+		},
+	});
+	window.onscroll=function(){
+		var scrtop=document.body.scrollTop || document.documentElement.scrollTop;
+		if(scrtop>=150){$(".backtop").css("opacity",1)}
+		else{$(".backtop").css("opacity",0)}
+	}
+	$(".backtop").click(function(){
+		$("html,body").animate({"scrollTop":0},300);
+	});
+</script>

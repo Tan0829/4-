@@ -1,0 +1,107 @@
+/* 通用基本设置 */
+.base{
+	width:1000px;
+	height:45px;
+	border-bottom:1px solid #cccccc;
+	margin:0 auto;
+	padding-top:27px;
+}
+.base>a{
+	display:block;
+	width:78px;
+	height:26px;
+	background:#7ca8cb;
+	font:14px/26px "微软雅黑";
+	text-align:center;
+	border-radius:3px;
+	color:white;
+}
+/* 第一部分 */
+/* 导航 */
+.part1{
+	width:1000px;
+	height:388px;
+	margin:0 auto;
+}
+.part1>ul{width:1000px;height:56px;margin-top:24px;float:left;}
+.part1>ul>li{
+	height:13px;
+	margin-right:12px;
+	float:left;
+	font:13px/13px "微软雅黑";
+}
+.part1>ul>li>a{color:#666666;}
+.part1>ul>li.active>a{color:#7ca8cb;}
+/* 具体内容 */
+.order{width:1000px;height:24px;float:left;margin-bottom:22px;}
+.order>a{
+	float:left;
+	font-size:13px;
+	color:#666666;
+	padding:2px 7px;
+}
+.order>a.active{background:#7ca8cb;color:white;border-radius:5px;}
+.order>span{float:left;font-size:13px;padding:0px 5px;}
+.ordernum{width:1000px;height:30px;float:left;}
+.ordernum>.sec{
+	width:40px;
+	height:22px;
+	background:#6696b7;
+	float:right;
+	font:12px/22px "微软雅黑";
+	color:white;
+	text-align:center;
+}
+.ordernum>input{
+	width:180px;
+	height:20px;
+	border:1px solid #cccccc;
+	float:right;
+	font:13px/20px "微软雅黑";
+	color:#757575;
+	margin:0 10px 0 4px;
+	outline:none;
+}
+.ordernum>a.kf{
+	width:58px;
+	height:22px;
+	background:#dedede;
+	color:#333333;
+	text-align:center;
+	float:right;
+	font:12px/22px "微软雅黑";
+}
+.detail{
+	width:1000px;
+	height:48px;
+	border:2px solid #cccccc;
+	border-left:none;
+	border-right:none;
+	float:left;
+}
+.detail>p{
+	font:13px/48px "微软雅黑";
+	color:#666666;
+	text-align:center;
+	border-right:1px solid #cccccc;
+	float:left;
+}
+.detail>p.p1{width:230px;}
+.detail>p.p2{width:90px;}
+.detail>p.p3{width:75px;}
+.detail>p.p4{width:130px;}
+.detail>p.p5{width:190px;}
+.detail>p.p6{width:80px;}
+.part1>h1{
+	width:1000px;
+	height:38px;
+	color:#666666;
+	border-bottom:1px solid #cccccc;
+	text-align:center;
+	font:13px/38px "微软雅黑";
+	float:left;
+}
+.mark{width:1000px;height:20px;padding-top:10px;float:left;}
+.mark>a{float:right;color:#666666;font-size:14px;}
+.mark>p{float:right;color:#666666;font-size:14px;}
+.mark>span{float:right;color:#ff0000;font-size:14px;}

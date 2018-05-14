@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="vieport" content="width=device-width,initial-scale=1,maxmum-scale=1,user-scalable=no"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery.Jcrop.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/personal.css"/>
+		<title></title>
+	</head>
+	<body>
+		<!--导航-->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<p class="logobox">
+						<span class="glyphicon glyphicon-home logo"></span>　TX微博
+					</p>
+					<button class="navbar-toggle" data-toggle="collapse" data-target=".nav">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<ul class="nav navbar-nav collapse navbar-collapse">
+					<li><a href="javascript:;" id="all">全部微博</a></li>
+					<li><a href="javascript:;" id="personal">个人微博</a></li>
+				</ul>
+				<div class="afterlogin"><span id="getusername"></span><p id="quit">退出</p></div>
+			</div>
+		</div>
+		<!--模态框更换头像-->
+		<div class="modal mofsl-sm" id="modal" data-backdrop=true>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2 id="changeinfo"></h2>
+					</div>
+					<div class="modal-body">
+						<div id="changetx">
+							<input type="file" id="file" accept="image/*"/>
+							<img id="element_id" src="">
+						</div>
+						<div id="changename" class="input-group">
+							<span class="input-group-addon">请输入新用户名</span>
+							<input type="text" id="newname" class="form-control"/>
+						</div>
+						<div id="changemima">
+							<div class="input-group">
+								<span class="input-group-addon">请输入旧密码</span>
+								<input type="password" id="oldmima" class="form-control"/>
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon">请输入新密码</span>
+								<input type="password" id="newmima" class="form-control"/>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-success" id="enter">确定</button>
+						<button class="btn btn-default close-btn" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--内容-->
+		<div class="container personal">
+			<div class="row">
+				<div class="col-sm-3 tx">
+					<h4 id="hostname"></h4>
+					<img src="" id="headicon"/>
+					<div class="btn-group">
+						<button class="btn btn-info" id="touxiang">修改头像</button>
+						<button class="btn btn-info" id="yonhuming">修改用户名</button>
+						<button class="btn btn-info" id="mima">修改密码</button>
+					</div>
+					
+				</div>
+				<div class="col-sm-6 col-sm-offset-1">
+					<h4>今天适合开黑</h4>
+					<div class="input-group">
+						<span class="input-group-addon">标题</span>
+						<input type="text" name="title" id="title" class="form-control"/>
+					</div>
+					<div class="form-group">
+						<textarea name="maintext" class="form-control" placeholder="正文" id="fbtext"></textarea>
+					</div>
+					<button class="btn btn-success fb">发表说说</button>
+					<span id="helptext"></span>
+				</div>
+			</div>
+		</div>
+		<!--全部动态-->
+		<div class="container main">
+			<div class="row">
+				<div class="col-sm-9 col-sm-offset-3">
+					<div class="dt">
+						<h4 class="dttitle">我的动态</h4>
+						<ul id="dtbox">
+							
+						</ul>
+						<div class="pagenav"></div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/underscore.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.pagination.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/md5.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.Jcrop.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/personal.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/aa" id="template">
+	<li index="<%=id%>" tagname="<%=username%>">
+		<div class="title">
+			<img src="<%=icon%>" class="fbimg"/>
+			<h3><%=username%></h3><span><%=time%></span>
+		</div>
+		<h4 class="content"><%=title%></h4>
+		<p class="content"><%=content%></p>
+		<div class="a<%=id%>"></div>
+		<div class="form-group plinput">
+			<input type="text" name="text" class="form-control text" placeholder="评论"/>
+			<input type="button" value="发送评论" class="btn btn-success sendpl"/>
+		</div>
+	</li>
+</script>
+<script type="text/aa" id="template1">
+	<div class="plbox"><span class="plname"><%=mainname%>：</span><span><%=info%>　</span><span class="pltime">　<%=times%></span></div>
+</script>

@@ -1,0 +1,9 @@
+(function(){$(".logobox").click(function(){location.href="index.html";})})();//点击logo
+(function(){$("#all").click(function(){//点击全部
+	if(!localStorage.getItem("weibousername")){$("#welcome").removeClass().addClass("red").html("别皮,登录了再说");}
+	else{location.href="all.html"}
+})})();
+(function(){$("#personal").click(function(){//点击全部
+	if(!localStorage.getItem("weibousername")){$("#welcome").removeClass().addClass("red").html("别皮,登录了再说");}
+	else{location.href="personal.html"}
+})})();

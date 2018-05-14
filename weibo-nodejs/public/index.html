@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="vieport" content="width=device-width,initial-scale=1,maxmum-scale=1,user-scalable=no"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<title></title>
+	</head>
+	<body>
+		<!--导航-->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<p class="logobox">
+						<span class="glyphicon glyphicon-home logo"></span>　TX微博
+					</p>
+					<button class="navbar-toggle" data-toggle="collapse" data-target=".nav">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<ul class="nav navbar-nav collapse navbar-collapse">
+					<li><a href="javascript:;" id="all">全部微博</a></li>
+					<li><a href="javascript:;" id="personal">个人微博</a></li>
+				</ul>
+				<button class="navbar-btn btn-success btn navbar-right" data-toggle="modal" data-target="#modal">注册</button>
+			</div>
+		</div>
+		<!--模态框-->
+		<div class="modal mofsl-sm" id="modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2 id="registinfo">开黑必备账号</h2>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label>用户名：　　<span id="reguser" class="blue">用户名为6-20个字符</span></label>
+							<input type="text" id="name" placeholder="请输入用户名"  class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>密码：　　<span id="regpwd" class="blue">密码为6-20位字符</span></label>
+							<input type="password" id="password" placeholder="请输入密码"  class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>确认密码：　　<span id="regconpwd"></span></label>
+							<input type="password" id="confirm" placeholder="请再次输入密码"  class="form-control"/>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-success" id="regist">注册</button>
+						<button class="btn btn-default close-btn" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--内容-->
+		<div class="container login">
+			<div class="row">
+				<div class="col-sm-6">
+					<h1 id="welcome">欢迎!</h1>
+					<h4>这里是TX的地盘，欢迎围观！</h4>
+					<button class="btn btn-info" data-toggle="modal" data-target="#modal">点击，一起来开黑</button>
+				</div>
+				<div class="col-sm-6">
+					<h3>已有账号?请登陆：</h3>
+					<div class="form-group">
+						<label>用户名：　　<span id="namehelp"></span></label>
+						<input type="text" name="username" id="loginname" placeholder="请输入用户名"  class="form-control"/>
+					</div>
+					<div class="form-group">
+						<label>密　码：　　<span id="pwdhelp"></span></label>
+						<input type="password" name="password" id="loginpwd" placeholder="请输入密码"  class="form-control"/>
+					</div>
+					<button class="btn btn-success" id="login">登录</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/md5.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/base.js" type="text/javascript" charset="utf-8"></script>

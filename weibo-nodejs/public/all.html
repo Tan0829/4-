@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="vieport" content="width=device-width,initial-scale=1,maxmum-scale=1,user-scalable=no"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/all.css"/>
+		<title></title>
+	</head>
+	<body>
+		<!--导航-->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<p class="logobox">
+						<span class="glyphicon glyphicon-home logo"></span>　TX微博
+					</p>
+					<button class="navbar-toggle" data-toggle="collapse" data-target=".nav">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<ul class="nav navbar-nav collapse navbar-collapse">
+					<li><a href="javascript:;" id="all">全部微博</a></li>
+					<li><a href="javascript:;" id="personal">个人微博</a></li>
+				</ul>
+				<div class="afterlogin"><span id="getusername"></span><p id="quit">退出</p></div>
+			</div>
+		</div>
+		<!--内容-->
+		<div class="container main">
+			<div class="row head hidden-xs"><h1>老司机停车场</h1></div>
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="list">
+						<h4>成员列表</h4>
+						<ul class="listbox">
+						</ul>
+					</div>
+					
+				</div>
+				<div class="col-sm-9">
+					<div class="dt">
+						<h4>全部动态</h4>
+						<ul id="dtbox">
+							
+						</ul>
+						<div class="pagenav"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/underscore.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.pagination.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.Jcrop.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/all.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/aa" id="template2">
+	<li><img src="<%=icon%>"/><p><%=username%></p></li>
+</script>
+<script type="text/aa" id="template">
+	<li index="<%=id%>" tagname="<%=username%>">
+		<div class="title">
+			<img src="<%=icon%>" class="fbimg"/>
+			<h3><%=username%></h3><span><%=time%></span>
+		</div>
+		<h4 class="content"><%=title%></h4>
+		<p class="content"><%=content%></p>
+		<div class="a<%=id%>"></div>
+		<div class="form-group plinput">
+			<input type="text" name="text" class="form-control text" placeholder="评论"/>
+			<input type="button" value="发送评论" class="btn btn-success sendpl"/>
+		</div>
+	</li>
+</script>
+<script type="text/aa" id="template1">
+	<div class="plbox"><span class="plname"><%=mainname%>：</span><span><%=info%>　</span><span class="pltime">　<%=times%></span></div>
+</script>

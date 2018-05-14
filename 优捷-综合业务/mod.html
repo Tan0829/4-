@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>优捷.生活美学平台</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /><!-- 标题图标 -->
+  <link type="text/css" rel="stylesheet" href="css/mod.css"><!-- 外链样式 -->
+  <script src='js/index.js'></script><!-- 外链JS -->
+ </head>
+ <body>
+	<!-- header样式 -->
+	<div class="head-bg">
+		<div class="head-in">
+			<a href="index.html"><img src="images/logo.png" /></a>
+		<!-- 右边注册信息 -->
+			<ul>
+				<li class='active nopaddingright'><a href="javascript:;"id='logintoper'>登录</a></li>
+				<li class='active'><a href="regist.html">注册</a></li>
+				<li class='nopadding'><img src="images/libg.png" /></li>
+				<li class='headlibg shopping'>
+					<span class='goodsnum'id='goodsnum'></span>
+					<a href="shopping.html">购物车</a>
+					<div class="shopin"><!-- 购物车下拉菜单 -->
+						<h2>
+							<p id='nogoods'>你的购物车暂时没有商品...</p>
+						</h2>
+						<h1 href="shop.html">快去抢购优捷商品吧！
+							<a href="shopping"id='goodsin'>查看我的购物车</a>
+						</h1>
+					</div>
+				</li>
+				<li class='nopadding'><img src="images/libg.png" /></li>
+				<li class='headlibg message'><a href="message.html">消息</a>
+					<div class="messagein"><!-- 消息下拉菜单 -->
+						<h1 id='dt'>动态<span>0</span></h1>
+						<p></p>
+						<h1 id='pl'>评论<span>0</span></h1>
+						<p></p>
+						<h1 id='sx'>私信<span>0</span></h1>
+						<p></p>
+						<h1 id='fs'>粉丝<span>0</span></h1>
+						<p></p>
+						<h1 id='xh'>喜欢<span>0</span></h1>
+						<p></p>
+						<h1 id='tz'>通知<span>0</span></h1>
+					</div>
+				</li>
+				<li class='nopadding'><img src="images/libg.png" /></li>
+				<li class='nopaddingright'><a href="share.html">添加良品</a></li>
+			</ul>
+			<div class="afterlg" id='afterlg'>
+				<p>318536214</p>
+				<div class="perinfo" id="perinfo">
+					<div><h2 id='perset'>个人设置</h2></div>
+					<div><h2 id='security'>账号安全</h2></div>
+					<div><h2 id='goodsinfo'>收货信息</h2></div>
+					<div><h2 class='noborder' id='myorder'>我的订单</h2></div>
+					<p id='quit'>退出</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 导航部分 -->
+	<div class="nav">
+		<div class='nomargin'id='index'>首页</div>
+		<div id='shop'>商店</div>
+		<div id='magazine'>杂志</div>
+		<div id='share'>分享</div>
+		<div id='good'>达人</div>
+		<p id='search'></p>
+		<h1 id='searchbox'>
+			<input type="text" placeholder='search...'>
+		</h1>
+		<h2></h2>
+	</div>
+	<!-- 返回顶部和联系客服 -->
+	<div class="backtop">
+		<a href="javascript:;" id="backtop"></a>
+		<p>联系客服</p>
+	</div>
+	<!-- 导航子菜单 -->
+	<!-- 商店 -->
+	<div class="shopbox" id="shopbox">
+		<div class="shop" id="shopping">
+			<ul class='ul1'id='ul1'>
+				<li><img src="images/16.png" /><p>家居</p>
+					<ul>
+						<li>家具</li>
+						<li>居家日用</li>
+						<li>装饰摆件</li>
+						<li>香薰香氛</li>
+						<li>空气净化</li>
+						<li>床品布艺</li>
+						<li>家庭清洁</li>
+						<li>儿童家居</li>
+						<li>灯具</li>
+						<li>家用电器</li>
+						<li>植物花器</li>
+						<li>宠物用品</li>
+					</ul>
+				</li>
+				<li><img src="images/15.png" /><p>文具</p>
+					<ul>
+						<li>办公用品</li>
+						<li>纸本</li>
+						<li>笔具</li>
+						<li>书签</li>
+						<li>红包</li>
+						<li>台历挂历</li>
+					</ul>
+				</li>
+				<li><img src="images/13.png" /><p>数码</p>
+					<ul>
+						<li>耳机</li>
+						<li>音响</li>
+						<li>相机</li>
+						<li>手机壳</li>
+						<li>手机配件</li>
+						<li>移动电源</li>
+						<li>智能设备</li>
+						<li>电脑配件</li>
+						<li>车载配件</li>
+					</ul>
+				</li>
+				<li><img src="images/12.png" /><p>玩乐</p>
+					<ul>
+						<li>玩具</li>
+						<li>玩偶</li>
+						<li>益智棋牌</li>
+						<li>运动健身</li>
+						<li>情趣用品</li>
+					</ul>
+				</li>
+				<li><img src="images/14.png" /><p>餐厨</p>
+					<ul>
+						<li>水杯水壶</li>
+						<li>厨具</li>
+						<li>酒具</li>
+						<li>茶具</li>
+						<li>厨房清洁</li>
+						<li>咖啡器皿</li>
+						<li>厨用电器</li>
+						<li>锅</li>
+					</ul>
+				</li>
+				<li><img src="images/10.png" /><p>美食</p>
+					<ul>
+						<li>美酒</li>
+						<li>零食</li>
+						<li>巧克力</li>
+						<li>咖啡</li>
+						<li>茶</li>
+						<li>健康养生</li>
+						<li>地方特产</li>
+					</ul>
+				</li>
+				<li><img src="images/9.png" /><p>服装</p>
+					<ul>
+						<li>女装</li>
+						<li>内衣</li>
+						<li>男装</li>
+						<li>家居服</li>
+						<li>运动服</li>
+						<li>童装</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class='ul2'id='ul2'>
+				<li><img src="images/7.png" /><p>鞋包</p>
+					<ul>
+						<li>男鞋</li>
+						<li>女鞋</li>
+						<li>双肩包</li>
+						<li>单肩包</li>
+						<li>钱包</li>
+						<li>手提包</li>
+						<li>手拿包</li>
+						<li>帆布袋</li>
+					</ul>
+				</li>
+				<li><img src="images/5.png" /><p>配饰</p>
+					<ul>
+						<li>项链</li>
+						<li>戒指</li>
+						<li>耳饰</li>
+						<li>手链手镯</li>
+						<li>手表</li>
+						<li>眼镜</li>
+						<li>丝巾围巾</li>
+						<li>帽子手套</li>
+						<li>袜子</li>
+						<li>其他饰品</li>
+					</ul>
+				</li>
+				<li><img src="images/11.png" /><p>美护</p>
+					<ul>
+						<li>洗发护发</li>
+						<li>身体护理</li>
+						<li>香水精油</li>
+						<li>局部护理</li>
+						<li>手工皂</li>
+						<li>指甲油</li>
+						<li>男士护肤</li>
+						<li>防晒霜</li>
+						<li>母婴专用</li>
+						<li>美容工具</li>
+						<li>面部护理</li>
+						<li>手足护理</li>
+						<li>化妆品</li>
+						<li>口腔清洁</li>
+						<li>洁面</li>
+					</ul>
+				</li>
+				<li><img src="images/4.png" /><p>出行</p>
+					<ul>
+						
+						<li>旅行神器</li>
+						<li>户外装备</li>
+						<li>雨具</li>
+						<li>出行工具</li>
+						<li>旅行收纳</li>
+						<li>行李箱</li>
+					</ul>
+				</li>
+				<li><img src="images/1.png" /><p>图书</p>
+					<ul>
+						<li>文学社科</li>
+						<li>建筑艺术</li>
+						<li>生活方式</li>
+						<li>杂志期刊</li>
+						<li>儿童读物</li>
+					</ul>
+				</li>
+				<li><img src="images/3.png" /><p>艺术</p>
+					<ul>
+						<li>艺术品</li>
+						<li>装饰画</li>
+						<li>雕塑</li>
+						<li>摄影</li>
+						<li>文化创意</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="newsight">
+				<img src="images/newsi.png" />
+				<p>新视线：2015年7月刊</p>
+			</div>
+			<p><span>查看所有品牌&nbsp;&gt;</span><span>最新到货&nbsp;&gt;</span></p>
+		</div>
+	</div>
+	<!-- 杂志 -->
+	<div class="shopbox" id="magazinebox">
+		<div class="magazinein"id='magazinein'>
+			<ul>
+				<li>趣物</li>
+				<li>数码</li>
+				<li>汽车</li>
+				<li>文化</li>
+				<li>时尚</li>
+				<li>美食</li>
+				<li>建筑</li>
+				<li>空间</li>
+				<li>圈子</li>
+				<li>清单</li>
+				<li>活动</li>
+				<li>视频</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 分享 -->
+	<div class="shopbox" id="sharebox">
+		<div class="sharein"id='sharein'>
+			<ul>
+				<li>男士</li>
+				<li>家居</li>
+				<li>数码</li>
+				<li>工具</li>
+				<li>玩具</li>
+				<li>美容</li>
+				<li>孩子</li>
+				<li>宠物</li>
+				<li>饮食</li>
+				<li>运动</li>
+				<li>文化</li>
+				<li>女士</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 主体部分 -->
+	<div class="topdis"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- 优捷商品 --> 
+	<div class="goodsbg">
+		<div class="lcgoods">
+			<p><img src="images/pointer.png" />优捷商店 / <span>OUR SHOP</span></p>
+			<ul>
+				<li><img src="images/lc_03.png" /><h1>全球精品</h1>
+					<h2>Global Selections</h2>
+				</li>
+				<li><img src="images/lc_05.png" /><h1>正品保证</h1>
+					<h2>Authenticity Guaranteed</h2>
+				</li>
+				<li><img src="images/lc_07.png" /><h1>全场包邮</h1>
+				<h2>Free Delivery</h2>
+				</li>
+				<li><img src="images/lc_09.png" /><h1>400-897-6336</h1>
+				<h2>工作日 09:00-18:00</h2>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="footerbg">
+		<div class="footer">
+			<div class="top">
+				<div id='downld'><h1>iPhone Android<br><span>客户端下载</span></h1>
+					<div class="downl">
+						<p class='lp'><img src="images/downl_03.png" />下载iPhone版</p>
+						<p class='rp'><img src="images/downl_05.png" />下载Android版</p>
+					</div>
+				</div>
+				<a href="http://www.douban.com"><img src="images/f_10.png" /></a>
+				<a href="http://weibo.com"><img src="images/f_08.png" /></a>
+				<p><img src="images/f_06.png" /><a href="javascript:;"><img src="images/weixin.png" /></a></p>
+			</div>
+			<div class="middle">
+				<ul>
+					<li>关于优捷</li>
+					<li>|</li>
+					<li>服务协议</li>
+					<li>|</li>
+					<li>隐私保护政策</li>
+					<li>|</li>
+					<li>使用指南</li>
+					<li>|</li>
+					<li>联系我们</li>
+					<li>|</li>
+					<li>加入我们</li>
+					<li>|</li>
+					<li>友情链接</li>
+					<li>|</li>
+					<li>私信优捷</li>
+				</ul>
+			</div>
+			<p class='footer-p1'>&copy; 2013-2015 北京优捷文化传播有限公司版权所有&nbsp;京ICP备13010677号-1&nbsp;京公网安备11010502025627</p>
+			<p>公司名称：北京优捷文化传播有限公司&nbsp;电话：010-58263516</p>
+			<p>公司地址：北京朝阳区百子湾路32号6楼1层60号，</p>
+			<p>社会信用统一代码：91110105059231575L&nbsp;食品许可证：JY11105160159557</p>
+			<p>图书证名称：中华人民共和国出版物经营许可证&nbsp;图书证编号：新出发京零 字第 朝 150051 号</p>
+		</div>
+	</div>
+ </body>
+</html>
+<script>
+	//点击登录跳转至已登录界面
+	var loginto=document.getElementById('logintoper');
+	var afterlg=document.getElementById('afterlg');
+	var quit=document.getElementById('quit');//个人信息详情
+	var perset=document.getElementById('perset');
+	var security=document.getElementById('security');
+	var goodsinfo=document.getElementById('goodsinfo');
+	var myorder=document.getElementById('myorder');
+	var goodsnum=document.getElementById('goodsnum');
+	var goodsin=document.getElementById('goodsin');
+	var nogoods=document.getElementById('nogoods');
+	setInterval(function(){
+		if(goodsnum.innerHTML==''){
+			goodsnum.style.marginRight='0px';
+			goodsin.style.display='none';
+			nogoods.style.display='block';
+		}
+	},100);
+	loginto.onclick=function(){afterlg.style.display='block';}
+	quit.onclick=function(){afterlg.style.display='none';}
+	perset.onclick=function(){window.location.href='perset.html';}
+	security.onclick=function(){window.location.href='security.html';}
+	goodsinfo.onclick=function(){window.location.href='goodsinfo.html';}
+	myorder.onclick=function(){window.location.href='myorder.html';}
+	var dt=document.getElementById('dt');
+	var pl=document.getElementById('pl');
+	var sx=document.getElementById('sx');
+	var fs=document.getElementById('fs');
+	var xh=document.getElementById('xh');
+	var tz=document.getElementById('tz');
+	dt.onclick=function(){window.location.href='dt.html';}
+	pl.onclick=function(){window.location.href='pl.html';}
+	sx.onclick=function(){window.location.href='sx.html';}
+	fs.onclick=function(){window.location.href='fs.html';}
+	xh.onclick=function(){window.location.href='xh.html';}
+	tz.onclick=function(){window.location.href='tz.html';}
+	//点击搜索显示/隐藏搜索框
+	var search=document.getElementById('search');
+	var leftvalue=0;
+	search.onclick=function(){
+		var searchbox=document.getElementById('searchbox');
+		if(leftvalue==0){
+			searchbox.style.transform='translate(-260px,0)';
+			leftvalue=1;
+		}else{
+			searchbox.style.transform='translate(0,0)';
+			leftvalue=0;
+		}
+	}
+	//导航子菜单
+	var ul1=document.getElementById('ul1');
+	var ul2=document.getElementById('ul2');
+	ul1.onmouseover=function(){
+		ul2.style.marginTop='136px';
+	}
+	ul1.onmouseout=function(){
+		ul2.style.marginTop='22px';
+	}
+	//点击首页
+	var index=document.getElementById('index');
+	index.onclick=function(){window.location.href='index.html';}
+	//商店
+	var shopbox=document.getElementById('shopbox');
+	var shop=document.getElementById('shop');
+	var shopping=document.getElementById('shopping');
+	shop.onclick=function(){window.location.href="shop.html";}
+	shop.onmouseover=function(){shopbox.style.display='block';}
+	shop.onmouseout=function(){shopbox.style.display='none';}
+	shopping.onmouseover=function(){shopbox.style.display='block';}
+	shopping.onmouseout=function(){shopbox.style.display='none';}
+	//杂志
+	var magazinebox=document.getElementById('magazinebox');
+	var magazine=document.getElementById('magazine');
+	var magazinein=document.getElementById('magazinein');
+	magazine.onclick=function(){window.location.href="magazine.html";}
+	magazine.onmouseover=function(){magazinebox.style.display='block';}
+	magazine.onmouseout=function(){magazinebox.style.display='none';}
+	magazinein.onmouseover=function(){magazinebox.style.display='block';}
+	magazinein.onmouseout=function(){magazinebox.style.display='none';}
+	//分享
+	var sharebox=document.getElementById('sharebox');
+	var share=document.getElementById('share');
+	var sharein=document.getElementById('sharein');
+	share.onclick=function(){window.location.href="share.html";}
+	share.onmouseover=function(){sharebox.style.display='block';}
+	share.onmouseout=function(){sharebox.style.display='none';}
+	sharein.onmouseover=function(){sharebox.style.display='block';}
+	sharein.onmouseout=function(){sharebox.style.display='none';}
+	//footer部分点击二维码跳转
+	var downld=document.getElementById('downld');
+	downld.onclick=function(){window.location.href='download.html';}
+</script>

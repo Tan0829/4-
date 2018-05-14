@@ -1,0 +1,17 @@
+/*全局样式*/
+*{margin: 0;padding:0;}
+li{list-style: none;}
+a{text-decoration: none;}
+img{border: none;}
+body{background: #EFEFEF;min-width: 320px;}
+/*logo*/
+.logo{color:yellowgreen;}
+.logobox{margin:0 20px 0 0;cursor: pointer;color: #999;line-height: 50px;font-size:20px;float:left;}
+.navbar-btn{position: absolute;right:20%;top:0px;}
+.navbar{position: relative;margin-bottom: none;}
+.navbar-nav{margin:0;}
+.afterlogin{position: absolute;right:20%;top:0px;color: #999;line-height: 50px;}
+.afterlogin>span,.afterlogin>p{float:left;}
+.red{color:#DD5044;}
+.green{color:#18A15F;}
+.blue{color:#4C8BF5;}

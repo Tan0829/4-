@@ -1,0 +1,67 @@
+/* 通用基本设置 */
+.base{
+	width:1000px;
+	height:45px;
+	border-bottom:1px solid #cccccc;
+	margin:0 auto;
+	padding-top:27px;
+}
+.base>a{
+	display:block;
+	width:78px;
+	height:26px;
+	background:#7ca8cb;
+	font:14px/26px "微软雅黑";
+	text-align:center;
+	border-radius:3px;
+	color:white;
+}
+/* 主体部分 */
+.main{width:1000px;height:328px;margin:0 auto;}
+.main>ul{
+	width:1000px;
+	height:24px;
+	border-bottom:1px solid #cccccc;
+	margin-top:52px;
+	float:left;
+}
+.main>ul>li{
+	height:24px;
+	margin-right:18px;
+	float:left;
+}
+.main>ul>li>a{
+	display:block;
+	height:24px;
+	font-size:13px;
+	color:#878787;
+}
+.main>ul>li.active>a{color:#a9c7e1;background:url(../images/dt_19.png)no-repeat center bottom;}
+.main>h1{
+	width:900px;
+	height:24px;
+	font:12px/24px "微软雅黑";
+	color:#666666;
+	float:left;
+	padding-left:53px;
+}
+.main>a{
+	width:60px;
+	height:20px;
+	font:14px/20px "微软雅黑";
+	color:white;
+	margin-top:20px;
+	float:left;
+	background:#98b5d5;
+	border-radius:3px;
+	text-align:center;
+}
+.main>h2{
+	width:1000px;
+	height:12px;
+	font:12px/12px "微软雅黑";
+	color:#999999;
+	margin-top:20px;
+	float:left;
+}
+

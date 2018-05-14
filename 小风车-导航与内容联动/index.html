@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<title>小风车</title>
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			a{text-decoration: none;}
+			li{list-style: none;}
+			/*顶部*/
+			.jumbotron{padding:20px 100px;margin-bottom: 0;height:160px;position: relative;}
+			.jumbotron>div{width:120px;height:120px;margin:0 100px;float: left;}
+			.jumbotron>div>img{width:100%;animation: rota 10s linear infinite;}
+			@-webkit-keyframes rota{from{transform: rotate(0deg);}to{transform: rotate(360deg);}} 
+			.jumbotron>span{float: left;font:bold 70px/120px "黑体";color: rgba(0,0,0,0);width:980px;text-align: right;position: absolute;left:0px;top:20px;background: linear-gradient(to right,red,orange,yellow,green,blue,purple);animation: bgmove 5s linear infinite alternate;-webkit-background-clip:text;}
+			@-webkit-keyframes bgmove{from{background-position: 0px 0px;}to{background-position: 490px 0px;}}
+			/*导航条logo*/
+			.navbar{height:66px;margin-bottom: 0;background: white;border-bottom: 1px solid #CCCCCC;width:100%;}
+			.affix{top:0;}
+			.affix+#part1{margin-top:67px;}
+			.navbar-brand{padding:0;height:65px;}
+			.navbar-brand>a{display: block;width:100%;height:100%;}
+			@media only screen and (min-width:1200px ) {.navbar-brand>a{width:300px;background: url(img/logo.png)no-repeat;}}
+			@media only screen and (max-width:1200px ) {.navbar-brand>a{width:121px;background: url(img/logo-m.png)no-repeat;}}
+			/*导航*/
+			.nav{background: white;}
+			.nav>li{margin-right: 1px;}
+			.nav>li>a{font-size:16px;padding:23px 20px 22px;color: #999999;transition:all 0.3s;}
+			.navbar .nav>li:hover>a{background: #52B6EC;color:white;}
+			.navbar .nav>li>a:focus{background: #52B6EC;color:white;}
+			.nav>li:last-child>a{padding-top:14px;padding-bottom:14px;}
+			.nav>li:last-child>p{padding:15px;width:230px;height:230px;position: absolute;right:0;top:66px;border:1px solid #4D3F2D;display: none;transition: all 0.3s;background: white;;}
+			.nav>li:last-child:hover>p{display: block;}
+			.nav>li.active>a{background: #52B6EC;color:white;}
+			/*导航切换按钮*/
+			.navbar-toggle{border:1px solid #DDDDDD;}
+			.icon-bar{background: #666666;}
+			.navbar-toggle:hover,.navbar-toggle:focus{background: #DDDDDD;}
+			@media only screen and (max-width:768px ) {
+				.nav{border-top:1px solid #999999;margin-top: 0;padding-top:10px;}
+				.nav p{left:150px;top:-165px !important;}
+				#part1{height:178px !important;background: url(img/bg.jpg) center top !important;}
+				.banner-text>h1{font-size:24px !important;}
+				.navbar{position: fixed;top:0;width:100%;}
+				#part1{margin-top:67px;}
+			}
+			@media only screen and (max-width:990px ) {.navbar{position: fixed;top:0;width:100%;}#part1{margin-top:67px;}}
+			/*轮播图*/
+			#part1{width:100%;height:768px;background: url(img/bg.jpg) center center no-repeat;position: relative;}
+			.img-box{margin:288px auto 0px;width:786px;height:480px;position: relative;}
+			.img-box>div{position: absolute;left:0;top:0;display: none;}
+			.img-box>div.img1{display: block;}
+			.banner-text{width:100%;position:absolute;top:80px;height:100px;margin:0;padding:0;}
+			.banner-text>h1{width:96%;font-size:40px;text-align:center;color: white;position: absolute;top:0;margin:0 2%;display: none;}
+			.banner-text>h1.h1{display: block;}
+			.next,.pre{position: absolute;top:49%;width:50px;height:50px;background: rgba(0,0,0,0.4);border: none;outline: none;color:rgba(255,255,255,0.7);font-size:20px;}
+			.next:hover,.pre:hover{background:rgba(0,0,0,0.8);}
+			.pre{left:20px;}
+			.next{right:20px;}
+			/*part2*/
+			#part2{padding:50px 0px 100px;width:100%;}
+			.row1{width:100%;}
+			.row1>li{margin-top:40px;}
+			.row1>li>img{width:140px;height:140px;margin:0 auto;display: block;}
+			.row1>li>h3,.row1>li>p{text-align: center;}
+			.t1{margin:40px auto;}
+			.t1>h1{color:#00B3FD;text-align: center;}
+			.t1>p{width:80px;height:2px;background:#00B3FD;margin:20px auto;}
+			/*part3*/
+			#part3{padding:50px 0px 40px;background: #F1F5F8;width:100%;}
+			.row2>li{margin-top:25px;background: white;background-clip: content-box;}
+			.row2>li>img{width:90%;display: block;margin: 10px auto;cursor: pointer;transition: 0.3s;}
+			.row2>li:hover>img{opacity: 0.7;}
+			.row2>li>h4{padding-left:20px;}
+			.row2>li>h5{padding:0px 0px 5px 20px;color: #A0A9B2;}
+			/*part4*/
+			#part4{padding:50px 0px 70px;}
+			.row3>li{background: #F1F5F8;margin-bottom: 25px;background-clip: content-box;}
+			.row3>li>img{display: block;margin:0 auto;cursor: pointer;padding:10px 30px;}
+			.row3>li:hover>img{opacity: 0.7;}
+			/*part5*/
+			.t2>h1{color:white;}
+			.t2>p{background: #77D2F7;}
+			#part5{background: url(img/about.jpg) center center no-repeat;width:100%;height:640px;padding:50px 0 30px;}
+			#part5>p{font-size:16px;text-align: center;color:white;}
+			/*part6*/
+			#part6{padding:50px 0 30px;background: url(img/mp.png) no-repeat;width:100%;background-size: cover;}
+			.row6{padding: 0 10%;}
+			.row6>li>img{display: block;margin:0 auto;}
+			.row6>li>h4{text-align: center;color: white;}
+			.footer{width:100%;padding:35px 0;color: #A4A7B8;text-align: center;font-size:16px;}
+		</style>
+	</head>
+	<body data-spy="scroll" data-target="#navbar" data-offset="240">
+		<!--顶部-->
+		<div class="jumbotron visible-md visible-lg">
+			<div><img src="img/logo_big.png" /></div>
+			<span>小风车欢迎您</span>
+		</div>
+		<!--导航条-->
+		<div class="navbar navbar-static-top" data-spy="affix" data-offset-top="160" id="navbar">
+			<div class="container">
+				<div class="navbar-header">
+					<div class="navbar-brand"><a href="#"></a></div>
+					<button class="navbar-toggle" data-toggle="collapse" data-target=".nav">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<ul class="nav navbar-nav navbar-right collapse navbar-collapse">
+					<li class="active"><a href="#part1"><span class="glyphicon glyphicon-home"></span> 网站首页</a></li>
+					<li><a href="#part2">服务与支持</a></li>
+					<li><a href="#part3">产品展示</a></li>
+					<li><a href="#part4">客户</a></li>
+					<li><a href="#part5">关于我们</a></li>
+					<li>
+						<a href="#"><img src="img/logo_ms.png"/></a>
+						<p><img src="img/sm1.png" /></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="container" id="part1">
+			<div class="img-box hidden-xs">
+				<div class="img1"><img src="img/b1.jpg" /></div>
+				<div class="img2"><img src="img/b2.jpg" /></div>
+			</div>
+			<div class="container banner-text">
+				<h1 class="h1">认真做事，小而美！ Small and beautiful!</h1>
+				<h1 class="h2">自主软件研发、大数据、金融服务、IT技术培训。</h1>
+			</div>
+			<button class="next hidden-xs"><span class="glyphicon glyphicon-menu-right"></span></button>
+			<button class="pre hidden-xs"><span class="glyphicon glyphicon-menu-left"></span></button>
+		</div>
+		<div class="container" id="part2">
+			<div class="t1"><h1>服务与支持</h1><p></p></div>
+			<ul class="row row1">
+				<li class="col-md-2 col-sm-6 col-md-offset-1">
+					<img src="img/s1.png"/>
+					<h3>系统集成</h3>
+					<p>
+						低成本的、高效率的<br>性能匀称的<br>可扩充性、可维护<br>
+					</p>
+				</li>
+				<li class="col-md-2 col-sm-6">
+					<img src="img/s2.png"/>
+					<h3>系统集成</h3>
+					<p>
+						低成本的、高效率的<br>性能匀称的<br>可扩充性、可维护<br>
+					</p>
+				</li>
+				<li class="col-md-2 col-sm-6">
+					<img src="img/s3.png"/>
+					<h3>系统集成</h3>
+					<p>
+						低成本的、高效率的<br>性能匀称的<br>可扩充性、可维护<br>
+					</p>
+				</li>
+				<li class="col-md-2 col-sm-6">
+					<img src="img/s4.png"/>
+					<h3>系统集成</h3>
+					<p>
+						低成本的、高效率的<br>性能匀称的<br>可扩充性、可维护<br>
+					</p>
+				</li>
+				<li class="col-md-2 col-sm-6">
+					<img src="img/s5.png"/>
+					<h3>系统集成</h3>
+					<p>
+						低成本的、高效率的<br>性能匀称的<br>可扩充性、可维护<br>
+					</p>
+				</li>
+			</ul>
+		</div>
+		<div class="container" id="part3">
+			<div class="t1"><h1>产品展示</h1><p></p></div>
+			<ul class="row col-xs-10 col-xs-offset-1 row2">
+				<li class="col-md-4 col-sm-6">
+					<img src="img/p1.png" alt="" />
+					<h4>爱鲜生</h4>
+					<h5><i>电商APP应用开发</i></h5>
+				</li>
+				<li class="col-md-4 col-sm-6">
+					<img src="img/p2.png" alt="" />
+					<h4>温江规划局</h4>
+					<h5><i>政府应用开发</i></h5>
+				</li>
+				<li class="col-md-4 col-sm-6">
+					<img src="img/p3.jpg" alt="" />
+					<h4>销售助手管理平台</h4>
+					<h5><i>运营商应用开发</i></h5>
+				</li>
+				<li class="col-md-4 col-sm-6">
+					<img src="img/p4.jpg" alt="" />
+					<h4>雅安科技馆</h4>
+					<h5><i>网站/微信/呼叫中心建设</i></h5>
+				</li>
+				<li class="col-md-4 col-sm-6">
+					<img src="img/p5.png" alt="" />
+					<h4>中丹环保环保管家系统</h4>
+					<h5><i>一站式环保综合服务平台</i></h5>
+				</li>
+				<li class="col-md-4 col-sm-6">
+					<img src="img/p6.png" alt="" />
+					<h4>国网乐山人资互动平台</h4>
+					<h5><i>微信公众号</i></h5>
+				</li>
+			</ul>
+		</div>
+		<div class="container" id="part4">
+			<div class="t1"><h1>我们的客户</h1><p></p></div>
+			<ul class="row row3">
+				<li class="col-md-3 col-sm-6"><img src="img/c1.png"/></li>
+				<li class="col-md-3 col-sm-6"><img src="img/c2.png"/></li>
+				<li class="col-md-3 col-sm-6"><img src="img/c3.png"/></li>
+				<li class="col-md-3 col-sm-6"><img src="img/c4.png"/></li>
+			</ul>
+		</div>
+		<div class="container" id="part5">
+			<div class="t1 t2"><h1>关于我们</h1><p></p></div>
+			<p>以客户需求为导向，以客户价值为目标，以客户满意为标准<br />
+				坚持变革，倡导创新，持续成长。 快速反应，快速决策，快速行动<br />
+				企业与员工共同成长， 专注主营业务。</p>
+		</div>
+		<div class="container" id="part6">
+			<ul class="row row6">
+				<li class="col-sm-6 col-md-4">
+					<img src="img/tel.png"/>
+					<h4>电话：028-67871837</h4>
+				</li>
+				<li class="col-sm-6 col-md-4">
+					<img src="img/ad.png"/>
+					<h4>地址：成都市高新区菁蓉国际广场4栋5楼A15</h4>
+				</li>
+				<li class="col-sm-6 col-md-4">
+					<img src="img/em.png"/>
+					<h4>邮箱：kefu@xfc123.com</h4>
+				</li>
+			</ul>
+		</div>
+		<div class="footer">Copyright &copy; 2017 Xiaofengche Inc. 保留所有权利。   蜀ICP备15020376号-1</div>
+	</body>
+</html>
+<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	//轮播图效果
+	setInterval(function(){
+		cut();
+	},3000);
+	function cut(){
+		$(".img1").stop().fadeToggle(500);
+		$(".img2").stop().fadeToggle(500);
+		$(".h1").stop().fadeToggle(500);
+		$(".h2").stop().fadeToggle(500);
+	}
+	var locker=true;
+	$(".next").click(function(){
+		if(!locker){return;}
+		locker=false;
+		cut();
+		setTimeout(function(){locker=true;},600)
+	});
+	$(".pre").click(function(){
+		if(!locker){return;}
+		locker=false;
+		cut();
+		setTimeout(function(){locker=true;},600)
+	});
+</script>

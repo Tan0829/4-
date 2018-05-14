@@ -1,0 +1,123 @@
+/* 主体标题 */
+.maintitle{
+	width:230px;
+	height:40px;
+	padding:44px 385px 50px;
+	margin:0 auto;
+}
+.maintitle>img{float:left;}
+/* 导航 */
+.manav{width:1000px;height:33px;margin:0 auto;position:relative;}
+.manav>ul{
+	width:1000px;
+	height:32px;
+	border-bottom:1px solid #ededed;
+}
+.manav>ul>li{
+	float:left;
+	padding:0 8px;
+	font:12px/32px "微软雅黑";
+	margin-right:40px;
+}
+.manav>ul>li>a{color:#333333;}
+/* 移动的线 */
+.manav>p{
+	position:absolute;
+	left:0;
+	top:33px;
+	width:64px;
+	height:1px;
+	background:#333333;
+	transition:0.4s ease 0.1s;
+}
+/* 主体 */
+.main{width:1000px;margin:0 auto;}
+.main:after{content: '';display: block;clear: both;}
+.main>ul>li{
+	width:235px;
+	height:295px;
+	margin:20px 20px 0 0;
+	float:left;
+	text-align:center;
+}
+.main>ul>li:hover>a>img{opacity: 1;}
+.main>ul>li:hover>a>h1{color:#333333;}
+.main>ul>li>a{width:235px;height:295px;float:left;}
+.main>ul>li>a>img{width:235px;height:235px;float:left;opacity: 0.9;transition: 0.2s;}
+.main>ul>li>a>h1{
+	font:16px/35px "微软雅黑";
+	color:#666666;
+	width:195px;
+	height:35px;
+	padding:0 20px;
+	overflow: hidden;
+	float:left;
+	text-align: center;
+	transition: 0.2s;
+}
+.main>ul>li>a>p{
+	float:left;
+	font:12px/25px "微软雅黑";
+	color:#333333;
+	width:235px;
+	text-align: center;
+}
+/* 分页 */
+.pagebg{width:1000px;height:110px;margin:0px auto 100px;}
+.page{
+	height:110px;
+	padding-top:45px;
+	float:right;
+}
+.page>.prev,.page>.next{
+	width:58px;
+	height:18px;
+	border:1px solid #d4d4d4;
+	float:left;
+	margin-left:4px;
+	background:#efefef;
+	font:12px/18px "微软雅黑";
+	color:#4f4f4f;
+	text-align:center;
+	border-radius:4px;
+	padding:0;
+}
+.page>a,.page>span{
+	float:left;
+	padding:0 4px;
+	height:18px;
+	margin-right:4px;
+	font:12px/18px "微软雅黑";
+	color:#878787;
+	text-align:center;
+	cursor:pointer;
+}
+.page>a.prev:hover,.page>a.next:hover{background:#efefef;color:#4f4f4f;}
+.page>a:hover{background:#cccccc;color:#fffaf4;}
+.page>span{background:#98B5D5;color:white;}
+.page>input{
+	width:24px;
+	height:18px;
+	border:1px solid #98b5d5;
+	outline:none;
+	float:left;
+}
+.page>p{
+	font:14px/20px "微软雅黑";
+	color:#8c8c8d;
+	margin:0 8px;
+	float:left;
+}
+.page>a.jump-btn{
+	float:right;
+	margin-left:4px;
+	width:40px;
+	height:20px;
+	font:12px/20px "微软雅黑";
+	color:#e9e9ea;
+	background:#8c8c8d;
+	text-align:center;
+	border-radius:4px;
+	padding:0;
+	cursor:pointer;
+}
